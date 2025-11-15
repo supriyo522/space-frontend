@@ -13,20 +13,20 @@ export default function Home() {
 
   return (
     <div className="home starfield">
-      {/* Nebula background */}
+  
       <div className="nebula"></div>
 
       <h1 className="home-title">METEORA</h1>
       <p className="home-subtitle">Journey across fictional worlds in deep space.</p>
 
       <div className="home-system">
-        {/* SUN */}
+ 
         <div className="sun">
           <div className="sun-core" />
           <div className="sun-glow" />
         </div>
 
-        {/* Planets */}
+
         {planets.map((planet, i) => (
           <div
             key={i}
@@ -57,7 +57,7 @@ export default function Home() {
                 ></div>
               </Link>
 
-              {/* Moons */}
+          
               {[...Array(planet.moons)].map((_, m) => (
                 <div
                   key={m}

@@ -1,4 +1,4 @@
-/* --- Background + Nebula + Starfield reused from home.css --- */
+
 .starfield {
   background: #000;
   position: relative;
@@ -39,7 +39,7 @@
   opacity: 0.55;
 }
 
-/* --- PAGE --- */
+
 .theronix-page {
   padding-top: 150px;
   text-align: center;
@@ -55,14 +55,14 @@
   color: transparent;
 }
 
-/* --- SYSTEM --- */
+
 .theronix-system {
   position: relative;
   height: 520px;
   margin-top: 40px;
 }
 
-/* CENTER PLANET */
+
 .center-planet {
   position: absolute;
   left: 50%;
@@ -85,7 +85,7 @@
   filter: blur(18px);
 }
 
-/* ORBITS */
+
 .orbit {
   position: absolute;
   left: 50%;
@@ -95,7 +95,7 @@
   border: 1px dashed rgba(255,255,255,0.05);
 }
 
-/* PLANETS */
+
 .planet-wrapper {
   position: absolute;
   left: 50%;
@@ -149,13 +149,13 @@
   border-radius: 50%;
 }
 
-/* SPIN ANIMATION */
+
 @keyframes spin {
   from { transform: rotate(0deg); }
   to   { transform: rotate(360deg); }
 }
 
-/* --------- STATS PANEL --------- */
+
 .stats {
   margin: 40px auto;
   display: flex;
@@ -207,12 +207,12 @@
 }
 
 .planet-portrait {
-  width: 20px; /* planet size smaller on mobile */
+  width: 20px; 
   height: 20px;
 }
 
 .orbit {
-  border-width: 1px; /* thinner orbit lines */
+  border-width: 1px; 
 }
 
 .stats {
@@ -229,7 +229,7 @@
   height: 5px;
 }
 
-/* ---------------- SMALL MOBILE / 320px ---------------- */
+
 @media (max-width: 320px) {
   .theronix-title {
     font-size: 28px;
@@ -255,7 +255,6 @@
   }
 }
 
-/* ---------------- MOBILE / 425px ---------------- */
 @media (max-width: 425px) {
   .theronix-title {
     font-size: 32px;
@@ -281,7 +280,7 @@
   }
 }
 
-/* ---------------- TABLET / 768px ---------------- */
+
 @media (max-width: 768px) {
   .theronix-title {
     font-size: 48px;
@@ -307,7 +306,7 @@
   }
 }
 
-/* ---------------- LAPTOP / DEFAULT DESKTOP (768px+) ---------------- */
+
 @media (min-width: 769px) {
   .theronix-title {
     font-size: 64px;

@@ -12,12 +12,12 @@ export default function Etheron() {
 
   return (
     <div className="etheron-page starfield">
-      {/* Nebula background */}
+
       <div className="nebula"></div>
 
       <h1 className="etheron-title">ETHERON SYSTEM</h1>
 
-      {/* STATS SECTION */}
+
       <div className="stats">
         <div><div className="stats-label">Galaxy</div><div className="stats-value">Andromeda-IV</div></div>
         <div><div className="stats-label">Diameter</div><div className="stats-value">16,440 km</div></div>
@@ -26,13 +26,13 @@ export default function Etheron() {
       </div>
 
       <div className="etheron-system">
-        {/* Center Planet: Etheron */}
+       
         <div className="center-planet">
           <img src="/assets/Purple Planet.png" alt="Etheron" className="planet-portrait" />
           <div className="planet-glow"></div>
         </div>
 
-        {/* Orbiting Planets */}
+   
         {planets.map((planet, i) => (
           <div
             key={i}
@@ -63,7 +63,7 @@ export default function Etheron() {
                 ></div>
               </Link>
 
-              {/* Moons */}
+
               {[...Array(planet.moons)].map((_, m) => (
                 <div
                   key={m}

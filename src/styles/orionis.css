@@ -1,4 +1,4 @@
-/* BACKGROUND (nebula + stars) */
+
 .starfield {
   background: #000;
   position: relative;
@@ -60,14 +60,14 @@
   color: transparent;
 }
 
-/* SYSTEM */
+
 .orionis-system {
   position: relative;
   height: 520px;
   margin-top: 40px;
 }
 
-/* CENTER PLANET */
+
 .center-planet {
   position: absolute;
   left: 50%;
@@ -90,7 +90,7 @@
   filter: blur(18px);
 }
 
-/* ORBITS */
+
 .orbit {
   position: absolute;
   left: 50%;
@@ -100,7 +100,7 @@
   border: 1px dashed rgba(255,255,255,0.05);
 }
 
-/* PLANETS */
+
 .planet-wrapper {
   position: absolute;
   left: 50%;
@@ -133,7 +133,7 @@
   filter: blur(7px);
 }
 
-/* MOONS */
+
 .moon-orbit {
   position: absolute;
   top: 50%;
@@ -160,7 +160,7 @@
   to   { transform: rotate(360deg); }
 }
 
-/* --------- STATS PANEL --------- */
+
 .stats {
   margin: 40px auto;
   display: flex;
@@ -198,14 +198,14 @@
   margin-top: 4px;
 }
 
-/* ---------------- MOBILE (320px - 425px) ---------------- */
+
 @media screen and (max-width: 425px) {
   .orionis-title {
     font-size: 36px;
   }
 
   .orionis-system {
-    height: 300px; /* smaller system */
+    height: 300px; 
   }
 
   .center-img {
@@ -228,7 +228,7 @@
   }
 }
 
-/* ---------------- TABLET (426px - 768px) ---------------- */
+
 @media screen and (min-width: 426px) and (max-width: 768px) {
   .orionis-title {
     font-size: 48px;
@@ -258,7 +258,7 @@
   }
 }
 
-/* ---------------- LAPTOP (769px - 1024px) ---------------- */
+
 @media screen and (min-width: 769px) and (max-width: 1024px) {
   .orionis-title {
     font-size: 56px;
@@ -288,7 +288,7 @@
   }
 }
 
-/* ---------------- DESKTOP (1025px+) ---------------- */
+
 @media screen and (min-width: 1025px) {
   .orionis-title {
     font-size: 64px;

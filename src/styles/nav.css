@@ -31,7 +31,7 @@
   letter-spacing: 3px;
 }
 
-/* ---------------- HAMBURGER ---------------- */
+
 .hamburger {
   display: none;
   flex-direction: column;
@@ -46,14 +46,14 @@
   border-radius: 2px;
 }
 
-/* ---------------- NAV RIGHT ---------------- */
+
 .nav-right {
   display: flex;
   align-items: center;
   gap: 15px;
 }
 
-/* ---------------- MOBILE (425px) ---------------- */
+
 @media screen and (max-width: 425px) {
   .nav-right {
     position: absolute;
@@ -70,7 +70,7 @@
   }
 
   .nav-right.open {
-    max-height: 300px; /* expand menu when open */
+    max-height: 300px; 
   }
 
   .nav-right a {
@@ -83,7 +83,7 @@
   }
 }
 
-/* ---------------- TABLET (768px) ---------------- */
+
 @media screen and (max-width: 768px) {
   .nav {
     padding: 16px 30px;

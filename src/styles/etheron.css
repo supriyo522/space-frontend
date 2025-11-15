@@ -49,7 +49,7 @@
   to { background-position: 0 1000px; }
 }
 
-/* ---------------- TITLE ---------------- */
+
 .etheron-title {
   font-size: 64px;
   font-weight: 900;
@@ -59,7 +59,7 @@
   margin-bottom: 50px;
 }
 
-/* ---------------- SYSTEM ---------------- */
+
 .etheron-system {
   position: relative;
   height: 600px;
@@ -67,7 +67,7 @@
   margin: auto;
 }
 
-/* Center Planet */
+
 .center-planet {
   position: absolute;
   left: 50%;
@@ -92,7 +92,7 @@
   z-index: -1;
 }
 
-/* ---------------- ORBITS ---------------- */
+
 .orbit {
   position: absolute;
   left: 50%;
@@ -102,7 +102,7 @@
   border: 1px dashed rgba(255,255,255,0.05);
 }
 
-/* ---------------- PLANETS ---------------- */
+
 .planet-wrapper {
   position: absolute;
   left: 50%;
@@ -139,7 +139,7 @@
   z-index: -1;
 }
 
-/* ---------------- MOONS ---------------- */
+
 .moon-orbit {
   position: absolute;
   width: 40px;
@@ -161,13 +161,13 @@
   box-shadow: 0 0 6px rgba(255,255,255,0.6);
 }
 
-/* ---------------- ANIMATIONS ---------------- */
+
 @keyframes spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
 
-/* --------- STATS PANEL --------- */
+
 .stats {
   margin: 40px auto;
   display: flex;
@@ -204,9 +204,9 @@
   margin-top: 4px;
 }
 
-/* ---------------- RESPONSIVE MEDIA QUERIES ---------------- */
 
-/* MOBILE: <=425px */
+
+
 @media screen and (max-width: 425px) {
   .etheron-title { font-size: 32px; margin-bottom: 20px; }
   .etheron-system { height: 300px; }
@@ -216,7 +216,7 @@
   .stats > div { min-width: 100%; padding: 10px 16px; }
 }
 
-/* TABLET: 426px – 768px */
+
 @media screen and (min-width: 426px) and (max-width: 768px) {
   .etheron-title { font-size: 40px; margin-bottom: 30px; }
   .etheron-system { height: 450px; }
@@ -225,7 +225,7 @@
   .stats > div { min-width: 160px; padding: 12px 20px; }
 }
 
-/* LAPTOP: 769px – 1024px */
+
 @media screen and (min-width: 769px) and (max-width: 1024px) {
   .etheron-title { font-size: 52px; margin-bottom: 40px; }
   .etheron-system { height: 500px; }

@@ -1,4 +1,4 @@
-/* Planet page styles */
+
 .planet-page {
   text-align: center;
   color: white;
@@ -30,7 +30,7 @@
   font-weight: bold;
 }
 
-/* CENTER PLANET */
+
 .etheron-system {
   position: relative;
   width: 650px;
@@ -64,7 +64,7 @@
   z-index: -1;
 }
 
-/* ORBITING PLANETS */
+
 .orbit-wrapper {
   position: absolute;
   top: 50%;

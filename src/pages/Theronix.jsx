@@ -4,7 +4,7 @@ import "../styles/theronix.css";
 export default function Theronix() {
   const randomStart = () => Math.random() * 360;
 
-  // Orbiting planets around Theronix
+
   const planets = [
     {
       name: "lumenara",
@@ -52,13 +52,13 @@ export default function Theronix() {
       </div>
 
       <div className="theronix-system">
-        {/* CENTER PLANET */}
+ 
         <div className="center-planet">
           <img src="/assets/Purple Planet (2).png" className="center-img" />
           <div className="center-glow" />
         </div>
 
-        {/* ORBITING PLANETS */}
+
         {planets.map((planet, i) => (
           <div
             key={i}
@@ -91,7 +91,7 @@ export default function Theronix() {
                 />
               </Link>
 
-              {/* MOONS */}
+   
               {[...Array(planet.moons)].map((_, m) => (
                 <div
                   key={m}

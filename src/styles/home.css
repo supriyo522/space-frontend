@@ -1,4 +1,4 @@
-/* ---------------- STARFIELD + NEBULA ---------------- */
+
 .starfield {
   background: #000;
   position: relative;
@@ -46,7 +46,7 @@
   to { background-position: 0 1000px; }
 }
 
-/* ---------------- LAYOUT ---------------- */
+
 .home {
   padding-top: 160px;
   text-align: center;
@@ -87,7 +87,7 @@
   transform: translateY(-3px);
 }
 
-/* ---------------- SOLAR SYSTEM ---------------- */
+
 .home-system {
   position: relative;
   height: 520px;
@@ -95,7 +95,7 @@
   margin-top: 40px;
 }
 
-/* SUN */
+
 .sun {
   position: absolute;
   left: 50%;
@@ -133,7 +133,6 @@
   to { transform: rotate(360deg); }
 }
 
-/* ---------------- ORBITS ---------------- */
 .orbit {
   position: absolute;
   left: 50%;
@@ -143,7 +142,7 @@
   border: 1px dashed rgba(255,255,255,0.05);
 }
 
-/* ---------------- PLANETS (ELLIPTICAL) ---------------- */
+
 .planet-wrapper {
   position: absolute;
   left: 50%;
@@ -185,7 +184,7 @@
   to { transform: rotate(360deg); }
 }
 
-/* ---------------- MOONS ---------------- */
+
 .moon-orbit {
   position: absolute;
   width: 40px;
@@ -212,14 +211,14 @@
   to { transform: rotate(360deg); }
 }
 
-/* ---------------- RESPONSIVE ---------------- */
+
 @media (max-width: 768px) {
   .home-title { font-size: 52px; }
   .home-subtitle { font-size: 18px; }
   .home-system { height: 400px; }
 }
 
-/* -------- MOBILE (small: 320px) -------- */
+
 @media (max-width: 320px) {
   .home-title { font-size: 36px; }
   .home-subtitle { font-size: 14px; }
@@ -232,7 +231,7 @@
   .orbit { border-width: 0.5px; }
 }
 
-/* -------- MOBILE (medium: 425px) -------- */
+
 @media (max-width: 425px) {
   .home-title { font-size: 46px; }
   .home-subtitle { font-size: 16px; }
@@ -245,7 +244,7 @@
   .orbit { border-width: 0.7px; }
 }
 
-/* -------- TABLET: 768px -------- */
+
 @media (max-width: 768px) {
   .home-title { font-size: 52px; }
   .home-subtitle { font-size: 18px; }
@@ -258,7 +257,7 @@
   .orbit { border-width: 1px; }
 }
 
-/* -------- LAPTOP / DESKTOP: 1024px+ -------- */
+
 @media (min-width: 1024px) {
   .home-title { font-size: 74px; }
   .home-subtitle { font-size: 22px; }

@@ -4,7 +4,7 @@ import "../styles/lumenara.css";
 export default function Lumenara() {
   const randomStart = () => Math.random() * 360;
 
-  // Orbiting planets around LUMENARA
+
   const planets = [
     {
       name: "orionis",
@@ -44,7 +44,7 @@ export default function Lumenara() {
 
       <h1 className="lumenara-title">LUMENARA SYSTEM</h1>
 
-      {/* STATS SECTION */}
+
       <div className="stats">
         <div><div className="stats-label">Galaxy</div><div className="stats-value">Andromeda-IV</div></div>
         <div><div className="stats-label">Diameter</div><div className="stats-value">11,540 km</div></div>
@@ -53,13 +53,13 @@ export default function Lumenara() {
       </div>
 
       <div className="lumenara-system">
-        {/* CENTER PLANET */}
+
         <div className="center-planet">
           <img src="/assets/Purple Planet (4).png" className="center-img" />
           <div className="center-glow" />
         </div>
 
-        {/* ORBITING PLANETS */}
+
         {planets.map((planet, i) => (
           <div
             key={i}
@@ -92,7 +92,7 @@ export default function Lumenara() {
                 />
               </Link>
 
-              {/* Moons */}
+
               {[...Array(planet.moons)].map((_, m) => (
                 <div
                   key={m}
