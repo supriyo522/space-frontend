@@ -1,0 +1,96 @@
+.nav {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 16px 40px;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+.nav a:hover {
+  color: #8b5cf6;
+}
+
+.nav-center {
+  font-size: 20px;
+  font-weight: 700;
+  color: #9d6bff;
+  letter-spacing: 3px;
+}
+
+/* ---------------- HAMBURGER ---------------- */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: white;
+  border-radius: 2px;
+}
+
+/* ---------------- NAV RIGHT ---------------- */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* ---------------- MOBILE (425px) ---------------- */
+@media screen and (max-width: 425px) {
+  .nav-right {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: rgba(0,0,0,0.9);
+    flex-direction: column;
+    width: 200px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    border-radius: 0 0 5px 5px;
+    padding: 0 10px;
+  }
+
+  .nav-right.open {
+    max-height: 300px; /* expand menu when open */
+  }
+
+  .nav-right a {
+    margin: 10px 0;
+    font-size: 16px;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+/* ---------------- TABLET (768px) ---------------- */
+@media screen and (max-width: 768px) {
+  .nav {
+    padding: 16px 30px;
+  }
+
+  .nav-right a {
+    margin: 0 12px;
+    font-size: 14px;
+  }
+}

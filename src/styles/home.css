@@ -1,0 +1,269 @@
+/* ---------------- STARFIELD + NEBULA ---------------- */
+.starfield {
+  background: #000;
+  position: relative;
+  overflow: hidden;
+}
+
+.nebula {
+  position: absolute;
+  inset: 0;
+  background: url("https://i.imgur.com/IPTtJPa.jpeg") center/cover no-repeat;
+  opacity: 0.18;
+  mix-blend-mode: screen;
+  animation: nebulaFloat 50s ease-in-out infinite alternate;
+}
+
+@keyframes nebulaFloat {
+  from { transform: translate(-20px, -10px) scale(1.1); }
+  to   { transform: translate(20px, 10px) scale(1.15); }
+}
+
+.starfield::before,
+.starfield::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-repeat: repeat;
+  animation: starScroll 60s linear infinite;
+  pointer-events: none;
+}
+
+.starfield::before {
+  background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
+  opacity: 0.35;
+  animation-duration: 55s;
+}
+
+.starfield::after {
+  background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
+  opacity: 0.55;
+  animation-duration: 110s;
+}
+
+@keyframes starScroll {
+  from { background-position: 0 0; }
+  to { background-position: 0 1000px; }
+}
+
+/* ---------------- LAYOUT ---------------- */
+.home {
+  padding-top: 160px;
+  text-align: center;
+  min-height: 100vh;
+}
+
+.home-title {
+  font-size: 74px;
+  font-weight: 900;
+  background: linear-gradient(to right, #8b5cf6, #3b82f6);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.home-subtitle {
+  margin-top: 10px;
+  font-size: 22px;
+  color: #dcdcdc;
+}
+
+.home-buttons {
+  margin-top: 40px;
+}
+
+.btn {
+  padding: 12px 30px;
+  border-radius: 30px;
+  background: rgba(139,92,246,0.18);
+  border: 1px solid #8b5cf6;
+  color: #fff;
+  margin: 10px;
+  display: inline-block;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: rgba(139,92,246,0.45);
+  transform: translateY(-3px);
+}
+
+/* ---------------- SOLAR SYSTEM ---------------- */
+.home-system {
+  position: relative;
+  height: 520px;
+  pointer-events: none;
+  margin-top: 40px;
+}
+
+/* SUN */
+.sun {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 140px;
+  height: 140px;
+  transform: translate(-50%, -50%);
+}
+
+.sun-core {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #ffd166, #ff9f1c 60%, #ff6b00 100%);
+  animation: pulse 4s infinite;
+  box-shadow: 0 0 60px rgba(255,150,0,0.7), 0 0 120px rgba(255,150,0,0.3);
+}
+
+.sun-glow {
+  position: absolute;
+  inset: -30px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,180,60,0.12), transparent 70%);
+  animation: flareSpin 16s linear infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.04); }
+  100% { transform: scale(1); }
+}
+
+@keyframes flareSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* ---------------- ORBITS ---------------- */
+.orbit {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 1px dashed rgba(255,255,255,0.05);
+}
+
+/* ---------------- PLANETS (ELLIPTICAL) ---------------- */
+.planet-wrapper {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: rotate(var(--start-angle)) scaleY(var(--orbit-scaleY, 1));
+  animation: orbitSpin var(--orbit-speed) linear infinite;
+}
+
+@keyframes orbitSpin {
+  from { transform: rotate(var(--start-angle)) scaleY(var(--orbit-scaleY, 1)); }
+  to { transform: rotate(calc(var(--start-angle) + 360deg)) scaleY(var(--orbit-scaleY, 1)); }
+}
+
+.planet-link {
+  position: absolute;
+  left: var(--planet-distance);
+  top: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: auto;
+}
+
+.planet-portrait {
+  border-radius: 50%;
+  animation: spin 14s linear infinite;
+}
+
+.atmosphere {
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(120,160,255,0.25), transparent 70%);
+  filter: blur(8px);
+  pointer-events: none;
+  z-index: -1;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* ---------------- MOONS ---------------- */
+.moon-orbit {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: 50%;
+  left: 50%;
+  animation: moonSpin var(--moon-speed, 6s) linear infinite;
+  transform-origin: var(--moon-distance) 50%;
+}
+
+.moon {
+  width: 10px;
+  height: 10px;
+  background: #dcdcdc;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  top: -5px;
+  box-shadow: 0 0 6px rgba(255,255,255,0.6);
+}
+
+@keyframes moonSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+@media (max-width: 768px) {
+  .home-title { font-size: 52px; }
+  .home-subtitle { font-size: 18px; }
+  .home-system { height: 400px; }
+}
+
+/* -------- MOBILE (small: 320px) -------- */
+@media (max-width: 320px) {
+  .home-title { font-size: 36px; }
+  .home-subtitle { font-size: 14px; }
+  .home-system { height: 250px; }
+
+  .sun { width: 90px; height: 90px; }
+  .sun-core { box-shadow: 0 0 30px rgba(255,150,0,0.7), 0 0 60px rgba(255,150,0,0.3); }
+
+  .planet-portrait { width: 20px !important; height: 20px !important; }
+  .orbit { border-width: 0.5px; }
+}
+
+/* -------- MOBILE (medium: 425px) -------- */
+@media (max-width: 425px) {
+  .home-title { font-size: 46px; }
+  .home-subtitle { font-size: 16px; }
+  .home-system { height: 300px; }
+
+  .sun { width: 110px; height: 110px; }
+  .sun-core { box-shadow: 0 0 40px rgba(255,150,0,0.7), 0 0 80px rgba(255,150,0,0.3); }
+
+  .planet-portrait { width: 30px !important; height: 30px !important; }
+  .orbit { border-width: 0.7px; }
+}
+
+/* -------- TABLET: 768px -------- */
+@media (max-width: 768px) {
+  .home-title { font-size: 52px; }
+  .home-subtitle { font-size: 18px; }
+  .home-system { height: 400px; }
+
+  .sun { width: 140px; height: 140px; }
+  .sun-core { box-shadow: 0 0 60px rgba(255,150,0,0.7), 0 0 120px rgba(255,150,0,0.3); }
+
+  .planet-portrait { width: 35px !important; height: 35px !important; }
+  .orbit { border-width: 1px; }
+}
+
+/* -------- LAPTOP / DESKTOP: 1024px+ -------- */
+@media (min-width: 1024px) {
+  .home-title { font-size: 74px; }
+  .home-subtitle { font-size: 22px; }
+  .home-system { height: 520px; }
+
+  .sun { width: 140px; height: 140px; }
+  .planet-portrait { width: 50px !important; height: 50px !important; }
+}

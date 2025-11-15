@@ -1,0 +1,334 @@
+/* --- Background + Nebula + Starfield reused from home.css --- */
+.starfield {
+  background: #000;
+  position: relative;
+  overflow: hidden;
+}
+
+.nebula {
+  position: absolute;
+  inset: 0;
+  background: url("https://i.imgur.com/IPTtJPa.jpeg") center/cover no-repeat;
+  opacity: 0.18;
+  mix-blend-mode: screen;
+  animation: nebulaFloat 50s ease-in-out infinite alternate;
+}
+
+@keyframes nebulaFloat {
+  from { transform: translate(-20px, -10px) scale(1.1); }
+  to   { transform: translate(20px, 10px) scale(1.15); }
+}
+
+.starfield::before,
+.starfield::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-repeat: repeat;
+  animation: starScroll 60s linear infinite;
+  pointer-events: none;
+}
+
+.starfield::before {
+  background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
+  opacity: 0.35;
+}
+
+.starfield::after {
+  background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
+  opacity: 0.55;
+}
+
+/* --- PAGE --- */
+.theronix-page {
+  padding-top: 150px;
+  text-align: center;
+  min-height: 100vh;
+  color: white;
+}
+
+.theronix-title {
+  font-size: 64px;
+  font-weight: 900;
+  background: linear-gradient(to right, #10b981, #6ee7b7);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* --- SYSTEM --- */
+.theronix-system {
+  position: relative;
+  height: 520px;
+  margin-top: 40px;
+}
+
+/* CENTER PLANET */
+.center-planet {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.center-img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  animation: spin 12s linear infinite;
+}
+
+.center-glow {
+  position: absolute;
+  inset: -25px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(16,185,129,0.3), transparent 70%);
+  filter: blur(18px);
+}
+
+/* ORBITS */
+.orbit {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px dashed rgba(255,255,255,0.05);
+}
+
+/* PLANETS */
+.planet-wrapper {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: rotate(var(--start-angle));
+  animation: orbitSpin var(--orbit-speed) linear infinite;
+}
+
+@keyframes orbitSpin {
+  from { transform: rotate(var(--start-angle)) scaleY(var(--orbit-scaleY)); }
+  to { transform: rotate(calc(var(--start-angle) + 360deg)) scaleY(var(--orbit-scaleY)); }
+}
+
+.planet-link {
+  position: absolute;
+  left: var(--planet-distance);
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.planet-portrait {
+  border-radius: 50%;
+  animation: spin 14s linear infinite;
+}
+
+.atmosphere {
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  filter: blur(7px);
+}
+
+/* MOONS */
+.moon-orbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  animation: moonSpin var(--moon-speed) linear infinite;
+  transform-origin: var(--moon-distance) 50%;
+}
+
+@keyframes moonSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.moon {
+  width: 8px;
+  height: 8px;
+  background: #eee;
+  border-radius: 50%;
+}
+
+/* SPIN ANIMATION */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* --------- STATS PANEL --------- */
+.stats {
+  margin: 40px auto;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  max-width: 900px;
+}
+
+.stats > div {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 18px 28px;
+  border-radius: 12px;
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  min-width: 180px;
+  transition: 0.3s ease;
+}
+
+.stats > div:hover {
+  transform: translateY(-6px);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.stats-label {
+  font-size: 14px;
+  opacity: 0.7;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.stats-value {
+  font-size: 20px;
+  font-weight: 700;
+  margin-top: 4px;
+}
+/* ---------------- MOBILE-FIRST BASE ---------------- */
+.theronix-title {
+  font-size: 36px;
+}
+
+.theronix-system {
+  height: 350px;
+}
+
+.center-img {
+  width: 100px;
+  height: 100px;
+}
+
+.planet-portrait {
+  width: 20px; /* planet size smaller on mobile */
+  height: 20px;
+}
+
+.orbit {
+  border-width: 1px; /* thinner orbit lines */
+}
+
+.stats {
+  gap: 20px;
+}
+
+.stats > div {
+  min-width: 140px;
+  padding: 12px 20px;
+}
+
+.moon {
+  width: 5px;
+  height: 5px;
+}
+
+/* ---------------- SMALL MOBILE / 320px ---------------- */
+@media (max-width: 320px) {
+  .theronix-title {
+    font-size: 28px;
+  }
+
+  .theronix-system {
+    height: 300px;
+  }
+
+  .center-img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .planet-portrait {
+    width: 15px;
+    height: 15px;
+  }
+
+  .stats > div {
+    padding: 10px 14px;
+    font-size: 12px;
+  }
+}
+
+/* ---------------- MOBILE / 425px ---------------- */
+@media (max-width: 425px) {
+  .theronix-title {
+    font-size: 32px;
+  }
+
+  .theronix-system {
+    height: 380px;
+  }
+
+  .center-img {
+    width: 90px;
+    height: 90px;
+  }
+
+  .planet-portrait {
+    width: 18px;
+    height: 18px;
+  }
+
+  .stats > div {
+    min-width: 160px;
+    padding: 14px 20px;
+  }
+}
+
+/* ---------------- TABLET / 768px ---------------- */
+@media (max-width: 768px) {
+  .theronix-title {
+    font-size: 48px;
+  }
+
+  .theronix-system {
+    height: 450px;
+  }
+
+  .center-img {
+    width: 130px;
+    height: 130px;
+  }
+
+  .planet-portrait {
+    width: 25px;
+    height: 25px;
+  }
+
+  .stats > div {
+    min-width: 180px;
+    padding: 16px 24px;
+  }
+}
+
+/* ---------------- LAPTOP / DEFAULT DESKTOP (768px+) ---------------- */
+@media (min-width: 769px) {
+  .theronix-title {
+    font-size: 64px;
+  }
+
+  .theronix-system {
+    height: 520px;
+  }
+
+  .center-img {
+    width: 160px;
+    height: 160px;
+  }
+
+  .planet-portrait {
+    width: 30px;
+    height: 30px;
+  }
+
+  .stats > div {
+    min-width: 180px;
+    padding: 18px 28px;
+  }
+}

@@ -1,0 +1,78 @@
+:root {
+  --scale-factor: 1;
+}
+
+/* STARFIELD BACKGROUND */
+.starfield { background: #000; position: relative; overflow: hidden; }
+.nebula { position: absolute; inset: 0; background: url("https://i.imgur.com/IPTtJPa.jpeg") center/cover no-repeat; opacity: 0.18; mix-blend-mode: screen; animation: nebulaFloat 50s ease-in-out infinite alternate; }
+@keyframes nebulaFloat { from { transform: translate(-20px, -10px) scale(1.1); } to { transform: translate(20px, 10px) scale(1.15); } }
+.starfield::before,
+.starfield::after { content: ""; position: absolute; inset: 0; background-repeat: repeat; animation: starScroll 60s linear infinite; pointer-events: none; }
+.starfield::before { background-image: url("https://www.transparenttextures.com/patterns/stardust.png"); opacity: 0.35; }
+.starfield::after { background-image: url("https://www.transparenttextures.com/patterns/stardust.png"); opacity: 0.55; }
+@keyframes starScroll { from { background-position: 0 0; } to { background-position: 0 900px; } }
+
+/* PAGE */
+.lumenara-page { padding-top: 150px; text-align: center; min-height: 100vh; color: white; }
+.lumenara-title { font-size: 64px; font-weight: 900; background: linear-gradient(to right, #f59e0b, #fbbf24); -webkit-background-clip: text; color: transparent; }
+
+/* SYSTEM */
+.lumenara-system { position: relative; height: 520px; margin-top: 40px; }
+
+/* CENTER PLANET */
+.center-planet { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); }
+.center-img { width: 160px; height: 160px; border-radius: 50%; animation: spin 12s linear infinite; }
+.center-glow { position: absolute; inset: -25px; border-radius: 50%; background: radial-gradient(circle, rgba(245,158,11,0.3), transparent 70%); filter: blur(18px); }
+
+/* ORBITS */
+.orbit { position: absolute; left: 50%; top: 50%; border-radius: 50%; transform: translate(-50%, -50%); border: 1px dashed rgba(255,255,255,0.05); }
+.planet-wrapper { position: absolute; left: 50%; top: 50%; transform: rotate(var(--start-angle)); animation: orbitSpin var(--orbit-speed) linear infinite; }
+@keyframes orbitSpin { from { transform: rotate(var(--start-angle)) scaleY(var(--orbit-scaleY)); } to { transform: rotate(calc(var(--start-angle) + 360deg)) scaleY(var(--orbit-scaleY)); } }
+.planet-link { position: absolute; left: var(--planet-distance); top: 50%; transform: translate(-50%, -50%); }
+.planet-portrait { border-radius: 50%; animation: spin 14s linear infinite; }
+.atmosphere { position: absolute; inset: -8px; border-radius: 50%; filter: blur(7px); }
+
+/* MOONS */
+.moon-orbit { position: absolute; top: 50%; left: 50%; animation: moonSpin var(--moon-speed) linear infinite; transform-origin: var(--moon-distance) 50%; }
+.moon { width: 8px; height: 8px; background: #eee; border-radius: 50%; }
+@keyframes moonSpin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+/* --------- STATS PANEL --------- */
+.stats { margin: 40px auto; display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; max-width: 900px; }
+.stats > div { background: rgba(255, 255, 255, 0.05); padding: 18px 28px; border-radius: 12px; backdrop-filter: blur(6px); border: 1px solid rgba(255, 255, 255, 0.08); min-width: 180px; transition: 0.3s ease; }
+.stats > div:hover { transform: translateY(-6px); background: rgba(255, 255, 255, 0.12); }
+.stats-label { font-size: 14px; opacity: 0.7; text-transform: uppercase; letter-spacing: 1px; }
+.stats-value { font-size: 20px; font-weight: 700; margin-top: 4px; }
+
+/* ----------------- RESPONSIVE ----------------- */
+@media screen and (max-width: 320px) {
+  :root { --scale-factor: 0.5; }
+  .lumenara-title { font-size: 32px; }
+  .lumenara-system { height: 300px; }
+  .stats { gap: 20px; }
+  .stats > div { padding: 12px 16px; min-width: 140px; }
+  .stats-label { font-size: 12px; }
+  .stats-value { font-size: 16px; }
+}
+@media screen and (max-width: 425px) {
+  :root { --scale-factor: 0.65; }
+  .lumenara-title { font-size: 40px; }
+  .lumenara-system { height: 380px; }
+  .stats { gap: 25px; }
+  .stats > div { padding: 14px 20px; min-width: 150px; }
+  .stats-label { font-size: 13px; }
+  .stats-value { font-size: 18px; }
+}
+@media screen and (max-width: 768px) {
+  :root { --scale-factor: 0.85; }
+  .lumenara-title { font-size: 50px; }
+  .lumenara-system { height: 450px; }
+  .stats { gap: 30px; }
+  .stats > div { padding: 16px 24px; min-width: 160px; }
+}
+@media screen and (min-width: 769px) {
+  :root { --scale-factor: 1; }
+  .lumenara-title { font-size: 64px; }
+  .lumenara-system { height: 520px; }
+}
